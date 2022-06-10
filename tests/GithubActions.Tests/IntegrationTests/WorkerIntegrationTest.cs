@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 
 namespace GithubActions.Tests.IntegrationTests;
-[Ignore("Need sql db.")]
 [TestFixture]
 internal class WorkerIntegrationTest
 {
