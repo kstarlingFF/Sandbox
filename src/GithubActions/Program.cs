@@ -10,7 +10,8 @@ var configurations = new ConfigurationBuilder()
     .Build();
 
 using IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services => ServicesExtension.AddServices(services, configurations))
+    .ConfigureServices(services => 
+        ServicesExtension.AddServices(services, configurations))
     .Build();
 
 var worker = host.Services.GetRequiredService<IWorker>();
