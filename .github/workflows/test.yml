@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    ## Start SqlServer
+    - run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=sandbox1234!@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
