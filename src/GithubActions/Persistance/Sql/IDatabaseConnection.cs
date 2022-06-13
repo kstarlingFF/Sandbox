@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace GithubActions.Persistance;
+namespace GithubActions.Persistance.Sql;
 
 public interface IDatabaseConnection
 {

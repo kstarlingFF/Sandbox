@@ -1,4 +1,5 @@
 ﻿using GithubActions.Persistance;
+using GithubActions.Persistance.Sql;
 using Microsoft.EntityFrameworkCore;
 
 namespace GithubActions.Tests.IntegrationTests.Persistance;
