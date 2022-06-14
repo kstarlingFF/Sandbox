@@ -2,7 +2,7 @@ name: Run Unit Test(s) Workflow
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   build:
