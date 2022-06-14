@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-
 var configurations = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
