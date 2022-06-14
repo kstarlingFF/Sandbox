@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GithubActions.Persistance;
+﻿using System.Data.SqlClient;
+using Azure.Storage.Blobs;
+using GithubActions.Persistance.Sql;
+using GithubActions.Persistance.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,6 +16,15 @@ public class ServicesExtension
             return new DatabaseConnection(new SqlConnection(configuration["ConnectionString"]));
         });
         services.AddScoped<IPersonRepository, PersonRepository>();
-        services.AddScoped<IWorker, Worker>();
+        services.AddScoped<IWorker<int>, DBWorker>();
+        services.AddScoped<IWorker<string>, StorageWorker>();
+
+        services.AddScoped<IBlobStorage<string>>(ctx =>
+        {
+            var serviceClient = new BlobServiceClient(configuration["Storage:StorageConnectionString"]);
+            var client = serviceClient.GetBlobContainerClient(configuration["Storage:Container"]);
+            client.CreateIfNotExists();
+            return new BlobStorage(client);
+        });
     }
 }

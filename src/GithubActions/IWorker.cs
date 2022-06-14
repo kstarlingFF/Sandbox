@@ -1,6 +1,6 @@
 ﻿namespace GithubActions;
 
-public interface IWorker
+public interface IWorker<TKey>
 {
-    Task<string> GetNameAsync(int id);
+    Task<string> GetDataAsync(TKey key);
 }

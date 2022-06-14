@@ -1,6 +1,6 @@
 ﻿using Dapper;
 
-namespace GithubActions.Persistance;
+namespace GithubActions.Persistance.Sql;
 
 public interface IPersonRepository : IRepository<Person>
 {
@@ -12,7 +12,7 @@ public class PersonRepository : IPersonRepository
 
     public PersonRepository(IDatabaseConnection connection)
     {
-        this._conn = connection;
+        _conn = connection;
     }
 
     public async virtual Task<Person> FindAsync(int id)
@@ -22,6 +22,6 @@ public class PersonRepository : IPersonRepository
             FROM [Person] 
             WHERE Id = @id ";
 
-        return await this._conn.Connection.QueryFirstOrDefaultAsync<Person>(query, new { id = id });
+        return await _conn.Connection.QueryFirstOrDefaultAsync<Person>(query, new { id });
     }
 }

@@ -1,18 +1,18 @@
-﻿using GithubActions.Persistance;
+﻿using GithubActions.Persistance.Sql;
 
 namespace GithubActions;
-public class Worker : IWorker
+public class DBWorker : IWorker<int>
 {
     private readonly IPersonRepository _personRepo;
 
-    public Worker(IPersonRepository personRepo)
+    public DBWorker(IPersonRepository personRepo)
     {
         this._personRepo = personRepo;
     }
 
-    public async Task<string> GetNameAsync(int id)
+    public async Task<string> GetDataAsync(int key)
     {
-        var person = await this._personRepo.FindAsync(id);
+        var person = await this._personRepo.FindAsync(key);
 
         if (person == null)
         {

@@ -7,17 +7,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      azurite:
+        image: mcr.microsoft.com/azure-storage/azurite:latest
+        ports:
+          - 10000:10000
+
+      sql-server:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:
+          - 1433:1433
+        env:
+          ACCEPT_EULA: Y
+          MSSQL_SA_PASSWORD: "sandbox1234!@#$"
     steps:
-    ## Start SqlServer
-    - run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=sandbox1234!@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+
+        with:
+          dotnet-version: 6.0.x
+      - run: dotnet restore
+      - run: dotnet build --configuration Release --no-restore
+      - run: dotnet test --no-restore --verbosity normal

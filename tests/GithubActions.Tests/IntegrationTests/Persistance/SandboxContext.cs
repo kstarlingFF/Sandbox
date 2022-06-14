@@ -1,4 +1,4 @@
-﻿using GithubActions.Persistance;
+﻿using GithubActions.Persistance.Sql;
 using Microsoft.EntityFrameworkCore;
 
 namespace GithubActions.Tests.IntegrationTests.Persistance;
@@ -16,7 +16,6 @@ public class SandboxContext : DbContext
     {
         builder.Entity<Person>()
             .ToTable("Person");
-            
     }
 
     public override int SaveChanges()

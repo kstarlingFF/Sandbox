@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using GithubActions.Persistance;
+using GithubActions.Persistance.Sql;
 using Moq;
 using NUnit.Framework;
 
@@ -31,8 +31,8 @@ public class WorkerTests
             .Setup(p => p.FindAsync(id))
             .ReturnsAsync(person);
 
-        var worker = new Worker(personRepoMock.Object);
-        var result = await worker.GetNameAsync(id);
+        var worker = new DBWorker(personRepoMock.Object);
+        var result = await worker.GetDataAsync(id);
 
         Assert.That(result, Is.EqualTo(person.Name));
     }

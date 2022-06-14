@@ -14,8 +14,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
         ServicesExtension.AddServices(services, configurations))
     .Build();
 
-var worker = host.Services.GetRequiredService<IWorker>();
+var worker = host.Services.GetRequiredService<IWorker<int>>();
 
-var name = worker.GetNameAsync(1).Result;
+var name = worker.GetDataAsync(1).Result;
 
 Console.WriteLine(name);

@@ -1,4 +1,4 @@
-﻿namespace GithubActions.Persistance;
+﻿namespace GithubActions.Persistance.Sql;
 
 public class Person
 {
