@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FormFree.Plumbing.GSE.FHLMC" Version="1.0.9" />
+    <PackageReference Include="FormFree.Plumbing.GSE.FHLMC" Version="1.0.10" />
     <PackageReference Include="FormFree.Plumbing.Storage.Azure.DependencyInjection.Microsoft" Version="2.0.0-alpha1658252198" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />

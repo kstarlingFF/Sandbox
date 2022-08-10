@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActions", "GithubActi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubActions.Tests", "..\tests\GithubActions.Tests\GithubActions.Tests.csproj", "{BD96DE72-50CE-423D-A5CA-4E2E13FFF7CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreddieShiz", "FreddieShiz\FreddieShiz.csproj", "{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreddieShiz", "FreddieShiz\FreddieShiz.csproj", "{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreddieTests", "FreddieTests\FreddieTests.csproj", "{56A9F362-BBF2-4EC0-A48F-D9D628E2F201}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A9F362-BBF2-4EC0-A48F-D9D628E2F201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A9F362-BBF2-4EC0-A48F-D9D628E2F201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A9F362-BBF2-4EC0-A48F-D9D628E2F201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A9F362-BBF2-4EC0-A48F-D9D628E2F201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{68F1DA13-6AE6-4AD4-A7E2-63AAE51C2251} = {E637B5CB-FA79-47E2-BF63-0C541AF6A7F9}
 		{BD96DE72-50CE-423D-A5CA-4E2E13FFF7CA} = {CCEDA463-88A3-4AEA-810E-7CC33D64BC51}
 		{8BC3DAF5-B183-42D6-B04C-4C5EC5F69329} = {E637B5CB-FA79-47E2-BF63-0C541AF6A7F9}
+		{56A9F362-BBF2-4EC0-A48F-D9D628E2F201} = {CCEDA463-88A3-4AEA-810E-7CC33D64BC51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F464B087-407C-46A8-9C22-D12E97121FFF}
